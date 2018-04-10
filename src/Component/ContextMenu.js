@@ -17,12 +17,15 @@ class ContextMenu extends Component {
     children: childrenOfType(Item).isRequired,
     theme: PropTypes.string,
     animation: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
+    className: PropTypes.string
   };
 
   static defaultProps = {
     theme: null,
-    animation: null
+    animation: null,
+    style: {},
+    className: ""
   };
 
   static THEME = {
@@ -169,9 +172,10 @@ class ContextMenu extends Component {
   }
 
   getMenuClasses() {
-    const { theme, animation } = this.props;
+    const { theme, animation, className } = this.props;
 
     return cx(
+      className,
       cssClasses.MENU,
       {
         [cssClasses.THEME + theme]: theme !== null,
