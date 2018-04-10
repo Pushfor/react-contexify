@@ -16,7 +16,8 @@ class ContextMenu extends Component {
     ]).isRequired,
     children: childrenOfType(Item).isRequired,
     theme: PropTypes.string,
-    animation: PropTypes.string
+    animation: PropTypes.string,
+    style: PropTypes.object
   };
 
   static defaultProps = {
@@ -162,7 +163,8 @@ class ContextMenu extends Component {
     return {
       left: this.state.x,
       top: this.state.y + 1,
-      opacity: 1
+      opacity: 1,
+      ...this.props.style
     };
   }
 
