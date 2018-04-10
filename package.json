@@ -1,6 +1,6 @@
 {
   "name": "react-contexify-pf",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "main": "lib/index.js",
   "description": "Add contextmenu to your react component with ease",
   "keywords": [
