@@ -86,9 +86,12 @@ class ContextMenu extends Component {
   onMouseLeave = () => window.addEventListener('mousedown', this.hide);
 
   hide = e => {
-    debugger;
     // Firefox trigger a click event when you mouse up on contextmenu event
     if (typeof e !== 'undefined' && e.button === 2 && e.type !== 'contextmenu') {
+      return;
+    }
+    console.log("this is the event", e);
+    if (!this.props.closeOnClick) {
       return;
     }
     this.unBindWindowEvent();
