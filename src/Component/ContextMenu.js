@@ -18,16 +18,14 @@ class ContextMenu extends Component {
     theme: PropTypes.string,
     animation: PropTypes.string,
     style: PropTypes.object,
-    className: PropTypes.string,
-    closeOnClick: PropTypes.bool
+    className: PropTypes.string
   };
 
   static defaultProps = {
     theme: null,
     animation: null,
     style: {},
-    className: "",
-    closeOnClick: true
+    className: ""
   };
 
   static THEME = {
