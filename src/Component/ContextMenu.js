@@ -18,14 +18,16 @@ class ContextMenu extends Component {
     theme: PropTypes.string,
     animation: PropTypes.string,
     style: PropTypes.object,
-    className: PropTypes.string
+    className: PropTypes.string,
+    closeOnClick: PropTypes.bool
   };
 
   static defaultProps = {
     theme: null,
     animation: null,
     style: {},
-    className: ""
+    className: "",
+    closeOnClick: true
   };
 
   static THEME = {
@@ -84,6 +86,7 @@ class ContextMenu extends Component {
   onMouseLeave = () => window.addEventListener('mousedown', this.hide);
 
   hide = e => {
+    debugger;
     // Firefox trigger a click event when you mouse up on contextmenu event
     if (typeof e !== 'undefined' && e.button === 2 && e.type !== 'contextmenu') {
       return;
